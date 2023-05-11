@@ -80,15 +80,16 @@
         <artifactId>git-build-hook-maven-plugin</artifactId>
         <configuration>
           <skip>${ci}</skip>
-          <gitConfig>
-            <core.hooksPath>maven/hooks</core.hooksPath>
-          </gitConfig>
+          <gitConfig></gitConfig>
+          <installHooks>
+            <pre-commit>hooks/pre-commit</pre-commit>
+          </installHooks>
         </configuration>
         <executions>
           <execution>
             <phase>initialize</phase>
             <goals>
-              <goal>configure</goal>
+              <goal>install</goal>
             </goals>
           </execution>
         </executions>
