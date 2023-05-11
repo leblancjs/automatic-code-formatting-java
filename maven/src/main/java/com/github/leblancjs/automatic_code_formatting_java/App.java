@@ -1,4 +1,4 @@
-package com.github.leblancjs.automatic-code-formatting-java;
+package com.github.leblancjs.automatic_code_formatting_java;
 
 /**
  * Hello world!
