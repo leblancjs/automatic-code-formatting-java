@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-echo "Hi!"
+staged_files=$(git diff --cached --name-only)
+if [ "${#staged_files[@]}" -gt 0 ]; then
+    cd ./maven
+    ./mvnw com.spotify.fmt:fmt-maven-plugin:format
+fi

@@ -81,7 +81,7 @@
         <configuration>
           <skip>${ci}</skip>
           <gitConfig>
-            <core.hooksPath>maven/hooks/</core.hooksPath>
+            <core.hooksPath>maven/hooks</core.hooksPath>
           </gitConfig>
         </configuration>
         <executions>
