@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+staged_files=$(git diff --cached --name-only)
+if [ "${#staged_files[@]}" -gt 0 ]; then
+    # No need to change to the 'gradle' sub-directory when the project is at the root of the Git repository.
+    cd ./gradle
+    ./gradlew :app:spotlessApply
+    cd ../
+
+    for staged_file in "${staged_files[@]}"; do
+        git add $staged_file
+    done
+fi
