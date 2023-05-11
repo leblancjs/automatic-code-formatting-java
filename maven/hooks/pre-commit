@@ -5,4 +5,9 @@ if [ "${#staged_files[@]}" -gt 0 ]; then
     # No need to change to the 'maven' sub-directory when the project is at the root of the Git repository.
     cd ./maven
     ./mvnw com.spotify.fmt:fmt-maven-plugin:format
+    cd ../
+
+    for staged_file in "${staged_files[@]}"; do
+        git add $staged_file
+    done
 fi
