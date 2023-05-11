@@ -6,8 +6,9 @@ import org.junit.jupiter.api.Test;
 
 class AppTest {
 
-    @Test
-    void isTrueReallyTrue() {
-        assertTrue(true);
-    }
+  @Test
+  void isTrueReallyTrue() {
+
+    assertTrue(true);
+  }
 }
