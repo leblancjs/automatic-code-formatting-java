@@ -1,0 +1,25 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: ["main"]
+    paths: ["maven"]
+  pull_request:
+    branches: ["main"]
+    paths: ["maven"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build and test with Maven
+      run: mvn -B verify --file pom.xml
+    - name: Update dependency graph
+      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
