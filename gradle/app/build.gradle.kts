@@ -32,3 +32,7 @@ spotless {
         googleJavaFormat()
     }
 }
+
+tasks.getByName("check") {
+    dependsOn("dependencyCheckAnalyze")
+}
